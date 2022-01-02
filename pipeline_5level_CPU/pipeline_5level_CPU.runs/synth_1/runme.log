@@ -1,0 +1,70 @@
+
+*** Running vivado
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a75tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a75t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a75t'
+INFO: [Device 21-403] Loading part xc7a75tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11056 
+WARNING: [Synth 8-2611] redeclaration of ansi port alusrcE is not allowed [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:52]
+WARNING: [Synth 8-2611] redeclaration of ansi port regdstE is not allowed [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:52]
+WARNING: [Synth 8-992] regwriteD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:53]
+WARNING: [Synth 8-992] memtoregD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:53]
+WARNING: [Synth 8-992] memwriteD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:53]
+WARNING: [Synth 8-2611] redeclaration of ansi port branchD is not allowed [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:53]
+WARNING: [Synth 8-992] alusrcD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:53]
+WARNING: [Synth 8-992] regdstD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:53]
+WARNING: [Synth 8-992] alucontrolD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:54]
+WARNING: [Synth 8-2611] redeclaration of ansi port alucontrolE is not allowed [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:54]
+WARNING: [Synth 8-2611] redeclaration of ansi port regwriteM is not allowed [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:60]
+WARNING: [Synth 8-2611] redeclaration of ansi port pcsrcM is not allowed [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:60]
+WARNING: [Synth 8-2611] redeclaration of ansi port regwriteW is not allowed [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:67]
+WARNING: [Synth 8-2611] redeclaration of ansi port memtoregW is not allowed [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:67]
+WARNING: [Synth 8-1751] cannot index into non-array instrD [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:33]
+WARNING: [Synth 8-1751] cannot index into non-array instrD [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/controller.v:45]
+WARNING: [Synth 8-992] pc_plus4 is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:65]
+ERROR: [Synth 8-988] rF is already declared [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:72]
+WARNING: [Synth 8-992] pcsrcD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:92]
+WARNING: [Synth 8-992] readdata1D is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:130]
+WARNING: [Synth 8-992] readdata2D is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:130]
+WARNING: [Synth 8-992] writedataE is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:130]
+WARNING: [Synth 8-992] aluoutE is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:195]
+WARNING: [Synth 8-992] pc_branchM is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:195]
+WARNING: [Synth 8-992] zeroE is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:197]
+ERROR: [Synth 8-988] r10 is already declared [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:199]
+WARNING: [Synth 8-992] writeregW is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:206]
+WARNING: [Synth 8-992] resultW is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:211]
+WARNING: [Synth 8-992] forwardAE is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:222]
+WARNING: [Synth 8-992] forwardBE is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:222]
+WARNING: [Synth 8-992] stallD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:222]
+WARNING: [Synth 8-992] stallF is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:222]
+WARNING: [Synth 8-992] flushE is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:222]
+WARNING: [Synth 8-992] forwardAD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:223]
+WARNING: [Synth 8-992] forwardBD is already implicitly declared earlier [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:223]
+ERROR: [Synth 8-2537] port forwardAE is not defined [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:177]
+ERROR: [Synth 8-2537] port forwardBE is not defined [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:185]
+ERROR: [Synth 8-2537] port lwstall is not defined [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:222]
+ERROR: [Synth 8-2537] port stallD is not defined [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:71]
+ERROR: [Synth 8-2537] port stallF is not defined [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:52]
+ERROR: [Synth 8-2537] port flushE is not defined [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:131]
+ERROR: [Synth 8-2545] port declaration not allowed in datapath with formal port declaration list [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:222]
+ERROR: [Synth 8-2537] port forwardAD is not defined [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:99]
+ERROR: [Synth 8-2537] port forwardBD is not defined [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:106]
+ERROR: [Synth 8-2545] port declaration not allowed in datapath with formal port declaration list [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:223]
+INFO: [Synth 8-2350] module datapath ignored due to previous errors [D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v:25]
+Failed to read verilog 'D:/vivado_workspace/ComputerComposition/pipeline_5level_CPU/rtl/datapath.v'
+INFO: [Common 17-83] Releasing license: Synthesis
+4 Infos, 33 Warnings, 0 Critical Warnings and 13 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 20 17:47:50 2021...

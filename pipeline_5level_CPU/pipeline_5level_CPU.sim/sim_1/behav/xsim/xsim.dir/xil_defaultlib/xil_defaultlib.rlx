@@ -1,0 +1,22 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/pipeline_5level_CPU.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/pipeline_5level_CPU.srcs/sources_1/ip/data_ram/sim/data_ram.v,1623511738,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/pipeline_5level_CPU.srcs/sources_1/ip/inst_ram/sim/inst_ram.v,,data_ram,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/pipeline_5level_CPU.srcs/sources_1/ip/inst_ram/sim/inst_ram.v,1624622317,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/adder.v,,inst_ram,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/adder.v,1510280216,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/alu.v,,adder,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/alu.v,1624173985,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/controller.v,,alu,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/controller.v,1625133026,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/datapath.v,,aludec;controller;maindec,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/datapath.v,1625137091,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/flopenrc.v,,datapath,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/flopenrc.v,1624185816,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/hazard.v,,flopenrc,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/hazard.v,1624623181,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/mips.v,,hazard,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/mips.v,1624626013,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/mux2.v,,mips,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/mux2.v,1623302881,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/mux3.v,,mux2,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/mux3.v,1624171504,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/pc.v,,mux3,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/pc.v,1625137176,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/regfile.v,,pc,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/regfile.v,1625115973,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/signext.v,,regfile,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/signext.v,1623302584,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/sl2.v,,signext,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/sl2.v,1623122797,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/top.v,,sl2,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/rtl/top.v,1624627294,verilog,,D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/sim/testbench.v,,top,,,,,,,,
+D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/sim/testbench.v,1624627344,verilog,,,,testbench,,,,,,,,
