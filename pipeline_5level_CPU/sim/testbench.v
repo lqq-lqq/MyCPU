@@ -44,6 +44,7 @@ module testbench();
 	end
 
 	always @(negedge clk) begin
+	   //$display("Ніаш");
 		if(memwrite) begin
 			/* code */
 			if(dataadr === 84 & writedata === 7) begin

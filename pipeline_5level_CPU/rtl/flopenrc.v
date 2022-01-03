@@ -30,13 +30,18 @@ module flopenrc
 
     always @(posedge clk) begin
         if(rst) begin
-            q <= 0;
+            q <= 32'b0;
+            $display("rst==1");
+            $display(q);
         end
         else if(clear) begin
-            q <= 0;
+            q <= 32'b0;
         end
         else if(en) begin
             q <= d;
+        end
+        else begin
+            q <= q;
         end
     end
 endmodule

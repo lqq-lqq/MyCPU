@@ -29,7 +29,7 @@ module datapath(
     output[31:0] aluoutM,
     output[31:0] pc,
     output zeroM,
-    input alusrcE,memtoregW,regdstE,rd_31E,regwriteM,regwriteW,branchD,memtoregE,regwriteE,memtoregM,jumpD,
+    input alusrcE,memtoregW,regdstE,rd_31E,write_pc_plus8M,write_pc_plus8W,jump_regD,regwriteM,regwriteW,branchD,memtoregE,regwriteE,memtoregM,jumpD,
     input [2:0] alucontrolE,
     input[31:0] instr,
     output[31:0] instrD,
@@ -65,6 +65,10 @@ wire [31:0] srcB3E; //涓夐?夊嚭鏉ョ殑srcBE
 
 //增加的变量
 wire jumpE;
+wire[31:0] pc_plus8F,pc_plus8D,pc_plus8E,pc_plus8M,pc_plus8W;  //pc+8  
+wire[31:0] pc_jump;
+wire[31:0] x,y;
+wire[31:0] pcplus8_aluoutM;
 
 
 // Fetch - Decode------------------------------------
@@ -78,10 +82,17 @@ mux2 #(32) mux4
     .choose(pcsrcD), //1: branch
     .C(pc_branch_plus4FD)
     );
-//还是直接跳转
+//寄存器跳转还是直接跳转
+mux2 #(32) mux12(
+    .A(x),  //寄存器读出来的值
+    .B({pc_plus4D[31:28],instrD[25:0],2'b00}),
+    .choose(jump_regD), //1: 选择寄存器的值
+    .C(pc_jump)
+);
+//
 mux2 #(32) mux5
 (
-    .A({pc_plus4D[31:28],instrD[25:0],2'b00}),  //无条件跳转指令的pc
+    .A(pc_jump),  //无条件跳转指令的pc
     .B(pc_branch_plus4FD),
     .choose(jumpD), //1: pc_jump
     .C(pcnextFD)
@@ -100,6 +111,12 @@ adder adder_1(
     .b(32'b100),
 	.y(pc_plus4F)
     );
+//pc_plus8
+adder adder_11(
+	.a(pc),
+    .b(32'b1000),
+	.y(pc_plus8F)
+    );
 
 //pc
 //wire[31:0] pc_next;
@@ -111,6 +128,8 @@ adder adder_1(
 flopenrc  #(32) rF1(clk,rst,~stallD,1'b0,instr,instrD); //flushD???????????????
 flopenrc  #(32) rF(clk,rst,~stallD,1'b0,pc_plus4F,pc_plus4D);
 
+flopenrc  #(32) rF2(clk,rst,~stallD,1'b0,pc_plus8F,pc_plus8D);
+
 
 
 
@@ -120,12 +139,12 @@ flopenrc  #(32) rF(clk,rst,~stallD,1'b0,pc_plus4F,pc_plus4D);
 wire [31:0] srcAE;
 wire [31:0] srcBE;
 wire equalD;
-wire[31:0] x,y;
+
 assign pcsrcD = equalD & branchD;//??????????????????????
 //数据前推,M阶段取出的前推到第一个操作数
 mux2 #(32) mm1
 (
-    .A(aluoutM),  //1
+    .A(pcplus8_aluoutM),  //1 改
     .B(readdata1D),//0
     .choose(forwardAD), 
     .C(x)
@@ -133,7 +152,7 @@ mux2 #(32) mm1
 //M阶段取出的前推到第二个操作数
 mux2 #(32) mm2
 (
-    .A(aluoutM),  //1
+    .A(pcplus8_aluoutM),  //1  改
     .B(readdata2D),//0
     .choose(forwardBD), 
     .C(y)
@@ -179,7 +198,7 @@ flopenrc  #(32) r8(clk,rst,1'b1,flushE,readdata2D,readdata2E);
 
 //增加 
 flopenrc  #(32) r9(clk,rst,1'b1,flushE,jumpD,jumpE);
-
+flopenrc  #(32) r12(clk,rst,1'b1,flushE,pc_plus8D,pc_plus8E);
 
 //Execute - Memory-----------------------------------
 //pc_branch
@@ -213,10 +232,17 @@ mux2 #(32) mux2
     .C(srcBE) 
     );
 //选择alu的第一个操作数
+//M阶段的操作数可能为pc+8
+mux2 #(32) m30(
+    .A(pc_plus8M),
+    .B(aluoutM),
+    .choose(write_pc_plus8M),
+    .C(pcplus8_aluoutM)
+);
 mux3 #(32) m31
 (   .d0(readdata1E),//00:寄存器里面读完出的第一个值instr[25:21]
     .d1(resultW),//01  ：写进寄存器里的值
-    .d2(aluoutM),//10  //alu算出来的数的下一个周期的数
+    .d2(pcplus8_aluoutM),//10  //alu算出来的数的下一个周期的数
     .s(forwardAE),
     .y(srcAE)
 );
@@ -240,24 +266,39 @@ assign writedataE = srcB3E;
 flopenrc  #(32) r29(clk,rst,1'b1,1'b0,writedataE,writedataM);
 flopenrc  #(32) r100(clk,rst,1'b1,1'b0,aluoutE,aluoutM);
 flopenrc  #(5) r14(clk,rst,1'b1,1'b0,writeregE,writeregM);
-flopenrc  #(1) r12(clk,rst,1'b1,1'b0,zeroE,zeroM);
+flopenrc  #(1) r16(clk,rst,1'b1,1'b0,zeroE,zeroM);
+//增加
+flopenrc  #(32) r17(clk,rst,1'b1,1'b0,pc_plus8E,pc_plus8M);
 
 //Memory - Writeback----------------------------------
 
 flopenrc  #(32) r13(clk,rst,1'b1,1'b0,aluoutM,aluoutW);
 flopenrc  #(5) r15(clk,rst,1'b1,1'b0,writeregM,writeregW);
 flopenrc  #(32) r20(clk,rst,1'b1,1'b0,readdataM,readdataW);
+//增加
+flopenrc  #(32) r18(clk,rst,1'b1,1'b0,pc_plus8M,pc_plus8W);
+
 //Writeback ------------------------------------------
 
 //mux for alu or the readata from the data memory
+//选择到底写回什么值
+wire[31:0] resultTempW;
+
 mux2 #(32) mux3
 (
     .A(readdataW),  //1:M阶段从memory读出来的值
     .B(aluoutW),   //0 ；alu算出来的值
     .choose(memtoregW), //1: from memory
+    .C(resultTempW)  //
+    );
+//增加选择pc+8还是原本的 
+mux2 #(32) mux6
+(
+    .A(pc_plus8W),  //1:
+    .B(resultTempW),   //0 ；
+    .choose(write_pc_plus8W), //1: 
     .C(resultW)  //得到真正写回寄存器的值
     );
-
 //鍐掗櫓
 
 hazard h( 
@@ -280,6 +321,9 @@ hazard h(
     .flushE(flushE),
     .forwardAD(forwardAD),
     .forwardBD(forwardBD),
-    .writeregE(writeregE)
+    .writeregE(writeregE),
+    
+    .jumpD(jumpD)
+    
 );
 endmodule

@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Jan  2 16:21:58 2022
+# Process ID: 12024
+# Current directory: D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10128 D:\yingzong\pipeline_5level_CPU\pipeline_5level_CPU\pipeline_5level_CPU.xpr
+# Log file: D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/vivado.log
+# Journal file: D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/pipeline_5level_CPU.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:09 . Memory (MB): peak = 754.637 ; gain = 82.121
+update_compile_order -fileset sources_1

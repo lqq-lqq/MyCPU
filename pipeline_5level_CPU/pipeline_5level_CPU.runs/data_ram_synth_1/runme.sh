@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/pipeline_5level_CPU.runs/data_ram_synth_1'
+HD_PWD='D:/yingzong/pipeline_5level_CPU/MyCPU/pipeline_5level_CPU/pipeline_5level_CPU.runs/data_ram_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

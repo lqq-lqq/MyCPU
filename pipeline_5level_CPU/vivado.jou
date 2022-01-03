@@ -2,13 +2,134 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun Jan  2 16:21:58 2022
-# Process ID: 12024
-# Current directory: D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10128 D:\yingzong\pipeline_5level_CPU\pipeline_5level_CPU\pipeline_5level_CPU.xpr
-# Log file: D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/vivado.log
-# Journal file: D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU\vivado.jou
+# Start of session at: Mon Jan  3 12:39:46 2022
+# Process ID: 5992
+# Current directory: D:/yingzong/pipeline_5level_CPU/MyCPU/pipeline_5level_CPU
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11792 D:\yingzong\pipeline_5level_CPU\MyCPU\pipeline_5level_CPU\pipeline_5level_CPU.xpr
+# Log file: D:/yingzong/pipeline_5level_CPU/MyCPU/pipeline_5level_CPU/vivado.log
+# Journal file: D:/yingzong/pipeline_5level_CPU/MyCPU/pipeline_5level_CPU\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project D:/yingzong/pipeline_5level_CPU/pipeline_5level_CPU/pipeline_5level_CPU.xpr
+open_project D:/yingzong/pipeline_5level_CPU/MyCPU/pipeline_5level_CPU/pipeline_5level_CPU.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 1}
+add_wave {{/testbench/dut/m/dp/pc1}} 
+current_wave_config {Untitled 1}
+add_wave {{/testbench/dut/m/dp/rF1/d}} {{/testbench/dut/m/dp/rF1/q}} 
+current_wave_config {Untitled 1}
+add_wave {{/testbench/dut/m/dp/rf}} 
+close_sim
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 2}
+add_wave {{/testbench/dut/m/dp/pc1}} 
+current_wave_config {Untitled 2}
+add_wave {{/testbench/dut/m/dp/rF1/d}} {{/testbench/dut/m/dp/rF1/q}} 
+current_wave_config {Untitled 2}
+add_wave {{/testbench/dut/m/dp/rf}} 
+current_wave_config {Untitled 2}
+add_wave {{/testbench/dut/m/dp/mux12}} 
+current_wave_config {Untitled 2}
+add_wave {{/testbench/dut/m/dp/mm1}} 
+close_sim
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 3}
+add_wave {{/testbench/dut/m/dp/pc1}} 
+current_wave_config {Untitled 3}
+add_wave {{/testbench/dut/m/dp/rF1}} 
+current_wave_config {Untitled 3}
+add_wave {{/testbench/dut/m/dp/rf}} 
+current_wave_config {Untitled 3}
+add_wave {{/testbench/dut/m/dp/mux1/A}} {{/testbench/dut/m/dp/mux1/B}} {{/testbench/dut/m/dp/mux1/choose}} {{/testbench/dut/m/dp/mux1/C}} 
+close_sim
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 4}
+add_wave {{/testbench/dut/m/dp/pc1}} 
+current_wave_config {Untitled 4}
+add_wave {{/testbench/dut/m/dp/rF1}} 
+current_wave_config {Untitled 4}
+add_wave {{/testbench/dut/m/dp/rf}} 
+current_wave_config {Untitled 4}
+add_wave {{/testbench/dut/m/dp/mux1}} 
+current_wave_config {Untitled 4}
+add_wave {{/testbench/dut/m/dp/mux11/choose}} 
+close_sim
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 5}
+add_wave {{/testbench/dut/m/dp/pc1/pc_new}} {{/testbench/dut/m/dp/pc1/pc}} 
+current_wave_config {Untitled 5}
+add_wave {{/testbench/dut/m/dp/rF1/d}} {{/testbench/dut/m/dp/rF1/q}} 
+current_wave_config {Untitled 5}
+add_wave {{/testbench/dut/m/dp/rf/ra1}} {{/testbench/dut/m/dp/rf/ra2}} {{/testbench/dut/m/dp/rf/wa3}} {{/testbench/dut/m/dp/rf/wd3}} {{/testbench/dut/m/dp/rf/rd1}} {{/testbench/dut/m/dp/rf/rd2}} {{/testbench/dut/m/dp/rf/rf}} 
+current_wave_config {Untitled 5}
+add_wave {{/testbench/dut/m/c}} 
+current_wave_config {Untitled 5}
+add_wave {{/testbench/dut/m/dp/rf/we3}} 
+current_wave_config {Untitled 5}
+add_wave {{/testbench/dut/m/dp/alu1/A}} {{/testbench/dut/m/dp/alu1/B}} {{/testbench/dut/m/dp/alu1/result}} {{/testbench/dut/m/dp/alu1/zero}} {{/testbench/dut/m/dp/alu1/op}} 
+current_wave_config {Untitled 5}
+add_wave {{/testbench/dut/m/dp/m32}} 
+current_wave_config {Untitled 5}
+add_wave {{/testbench/dut/m/dp/m31}} 
+close_sim
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 6}
+add_wave {{/testbench/dut/m/dp/pc1/pc}} 
+current_wave_config {Untitled 6}
+add_wave {{/testbench/dut/m/dp/rF1/d}} {{/testbench/dut/m/dp/rF1/q}} 
+current_wave_config {Untitled 6}
+add_wave {{/testbench/dut/m/dp/rf/rf}} 
+current_wave_config {Untitled 6}
+add_wave {{/testbench/dut/m/dp/rf/ra1}} {{/testbench/dut/m/dp/rf/ra2}} {{/testbench/dut/m/dp/rf/wa3}} {{/testbench/dut/m/dp/rf/wd3}} {{/testbench/dut/m/dp/rf/rd1}} {{/testbench/dut/m/dp/rf/rd2}} {{/testbench/dut/m/dp/rf/rf}} 
+current_wave_config {Untitled 6}
+add_wave {{/testbench/dut/m/c}} 
+current_wave_config {Untitled 6}
+add_wave {{/testbench/dut/m/dp/m31}} 
+close_sim
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 7}
+add_wave {{/testbench/dut/m/dp/pc1/pc}} 
+current_wave_config {Untitled 7}
+add_wave {{/testbench/dut/m/c}} 
+current_wave_config {Untitled 7}
+add_wave {{/testbench/dut/m/dp/rf}} 
+current_wave_config {Untitled 7}
+add_wave {{/testbench/dut/m/dp/mux12}} 
+close_sim
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 8}
+add_wave {{/testbench/dut/m/c}} 
+current_wave_config {Untitled 8}
+add_wave {{/testbench/dut/m/dp/pc1/pc}} 
+current_wave_config {Untitled 8}
+add_wave {{/testbench/dut/m/dp/rf}} 
+current_wave_config {Untitled 8}
+add_wave {{/testbench/dut/m/dp/mm1}} 
+close_sim
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 9}
+add_wave {{/testbench/dut/m/c}} 
+current_wave_config {Untitled 9}
+add_wave {{/testbench/dut/m/dp/pc1/pc}} 
+current_wave_config {Untitled 9}
+add_wave {{/testbench/dut/m/dp/rf}} 
+close_sim
+launch_simulation
+source testbench.tcl
+current_wave_config {Untitled 10}
+add_wave {{/testbench/dut/m/c}} 
+current_wave_config {Untitled 10}
+add_wave {{/testbench/dut/m/dp/pc1/pc}} 
+current_wave_config {Untitled 10}
+add_wave {{/testbench/dut/m/dp/rf}} 
+current_wave_config {Untitled 10}
+add_wave {{/testbench/dut/m/dp/mux12}} 
